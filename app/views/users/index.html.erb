@@ -5,12 +5,7 @@
 <table>
   <thead>
     <tr>
-<<<<<<< HEAD
       <th>Email</th>
-=======
-      <th>Username</th>
-      <th>Password</th>
->>>>>>> b339cc41de4cde6b61b1164bb97564f691fb6cc8
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +13,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-<<<<<<< HEAD
         <td><%= user.email %></td>
-=======
-        <td><%= user.username %></td>
-        <td><%= user.password %></td>
->>>>>>> b339cc41de4cde6b61b1164bb97564f691fb6cc8
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

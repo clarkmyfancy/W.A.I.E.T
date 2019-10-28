@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   root 'home#index'
   
   resources :users
@@ -8,8 +7,3 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 end
-=======
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
->>>>>>> b339cc41de4cde6b61b1164bb97564f691fb6cc8
