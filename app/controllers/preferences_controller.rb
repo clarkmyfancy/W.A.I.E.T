@@ -1,4 +1,5 @@
 class PreferencesController < ApplicationController
-  def preferences
+  def index
   end
+
 end
