@@ -4,12 +4,12 @@
 class ResultsController < ApplicationController
 
     def index 
+        @hi = params[:categories]
         restaurants = Client.search(['breakfast'])
         @restaurants = restaurants["businesses"].uniq {|biz| biz["name"] }
     end
 
     def create
-
-        redirect_to results_path
+        redirect_to results_path(categories: params[:restCategory])
     end
 end
