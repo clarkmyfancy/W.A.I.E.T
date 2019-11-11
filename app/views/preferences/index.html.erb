@@ -1,24 +1,22 @@
 <%= "Select Preferences" %>
 
-<!--<#%= form_tag results_path do %>-->
-<!--  <label for="restCategory">Select a category of food (You may control-click (Windows) or command-click (Mac) to select more than one): </label>-->
-<!--    <select class="form-control"-->
-<!--            id="restCategory"-->
-<!--            name="restCategory"-->
-<!--            multiple-->
-<!--            required>-->
-<!--      <option value="breakfast">Breakfast</option>-->
-<!--      <option value="lunch">Lunch</option>-->
-<!--      <option value="dinner">Dinner</option>-->
-<!--      <option value="mexican">Mexican</option>-->
-<!--      <option value="vegan">Vegan</option>-->
-<!--    </select>-->
-<!--<#%= submit_tag "Submit" %>-->
-<!--<#% end %>-->
-
-<button class="button0 button0" name="WAIET">WAIET</button>
-<button class="button button1">Breakfast</button>
-<button class="button button2">Lunch</button>
-<button class="button button3">Dinner</button>
-<button class="button button4">Submit</button>
+<%= form_tag results_path do %>
+  <input type="checkbox" name="restCategory[]" value="breakfast">Breakfast</input>
+  <input type="checkbox" name="restCategory[]" value="lunch">Lunch</input>
+  <input type="checkbox" name="restCategory[]" value="dinner">Dinner</input>
+  <input type="checkbox" name="restCategory[]" value="mexican">Mexican</input>
+  <input type="checkbox" name="restCategory[]" value="italian">Italian</input>
+  <input type="checkbox" name="restCategory[]" value="asian">Asian</input>
+  <input type="checkbox" name="restCategory[]" value="american">American</input>
+  <input type="checkbox" name="restCategory[]" value="vegan">Vegan</input>
+  <input type="checkbox" name="restCategory[]" value="vegetarian">Vegetarian</input>
+  <input type="checkbox" name="restCategory[]" value="fast food">Fast Food</input>
+  <input type="checkbox" name="restCategory[]" value="gluten free">Gluten Free</input>
+<%= submit_tag "Submit" %>
+<% end %>
+<!--<button class="button0 button0" name="WAIET">WAIET</button>-->
+<!--<button class="button button1">Breakfast</button>-->
+<!--<button class="button button2">Lunch</button>-->
+<!--<button class="button button3">Dinner</button>-->
+<!--<button class="button button4">Submit</button>-->
 

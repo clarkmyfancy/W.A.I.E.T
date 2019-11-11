@@ -4,12 +4,16 @@
 class ResultsController < ApplicationController
 
     def index 
-        @hi = params[:categories]
-        restaurants = Client.search(['breakfast'])
-        @restaurants = restaurants["businesses"].uniq {|biz| biz["name"] }
+        @cat = [ params[:categories].join(' ') ]
+        restaurants = Client.search(@cat)
+        @restaurants = restaurants["businesses"].uniq {|biz| biz["name"] } unless restaurants == nil
     end
 
     def create
-        redirect_to results_path(categories: params[:restCategory])
+        if params[:restCategory]
+            redirect_to results_path(categories: params[:restCategory])
+        else
+            redirect_to results_path(categories: ['food'])
+        end
     end
 end

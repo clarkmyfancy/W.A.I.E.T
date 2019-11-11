@@ -1,5 +1,10 @@
-<%= "View your restaurant results" %></br>
-<% @restaurants.each do |rest| %>
-<%= rest["name"] %></br>
-<% end %></br>
-<%= @hi %></br>
+<% if @restaurants.length() == 0 %>
+    <h3>There are no open restaurants with your current preferences:</h3>
+    <%= link_to 'Change Preferences', preferences_path %>
+<% else %>
+    <h3><%= @restaurants.length() %> open restaurants with your preferences:</h3>
+    <% @restaurants.each do |rest| %>
+    <%= rest["name"] %></br>
+    <% end %></br>
+    <%= @cat %></br>
+<% end %>

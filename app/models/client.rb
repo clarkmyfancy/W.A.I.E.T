@@ -5,7 +5,7 @@ require "optparse"
 class Client < ApplicationRecord
   # Place holders for Yelp Fusion's API key. Grab it
   # from https://www.yelp.com/developers/v3/manage_app
-  API_KEY = ENV["YELP_API_KEY"]
+  API_KEY = "d-yJQSQLB6kXGGMW3-FDyGNeBXW-j89QbZxiWayPSg_9zKqo3IGyKhLZCXpDxM45ClJLMVoJzLt-w-FJBP4G4muQEq-PrNVw35r56-frAONXuqGPNlGGGFEqeZjGXHYx"
   
   
   # Constants, do not change these
@@ -15,13 +15,13 @@ class Client < ApplicationRecord
   
   
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
-  DEFAULT_TERM = "food"
+  DEFAULT_TERM = ['food']
   DEFAULT_LOCATION = "College Station, TX"
   DEFAULT_PRICE = "1"
-  DEFAULT_OPEN = false
+  DEFAULT_OPEN = true
   SEARCH_LIMIT = 10
   
-  terms = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
+  term = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
   price = ["1", "2", "3"]
   
   
