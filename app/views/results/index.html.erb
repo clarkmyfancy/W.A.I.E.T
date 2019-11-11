@@ -1,1 +1,4 @@
-<% "View your restaurant results" %>
+<%= "View your restaurant results" %></br>
+<% @restaurants.each do |rest| %>
+<%= rest["name"] %></br>
+<% end %></br>

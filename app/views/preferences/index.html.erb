@@ -1,15 +1,13 @@
 <%= "Select Preferences" %>
 
-<form action="/results">
+<%= form_tag results_path do %>
   <p>Please select what type of food you are in the mood for:</p>
   <p>
-    <input name="Breakfast" type="CheckBox" value="Breakfast"> Breakfast
+    <input name="Breakfast", id="Breakfast", type="CheckBox" value="Breakfast"> Breakfast
     <br/>
-    <input name="Lunch" type="CheckBox" value="Lunch"> Lunch
+    <input name="Lunch", id="Lunch", type="CheckBox" value="Lunch"> Lunch
     <br/>
-    <input name="Dinner" type="CheckBox" value="Dinner"> Dinner
+    <input name="Dinner", id="Dinner", type="CheckBox" value="Dinner"> Dinner
   </p>
-  <p>
-    <input type="submit" value="Submit">
-  </p>
-</form>
+<%= submit_tag "Submit" %>
+<% end %>
