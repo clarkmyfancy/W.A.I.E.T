@@ -1,11 +1,14 @@
+<%= "Preferences: "%>
+<%= @cat %></br>
+<%= link_to "Edit Preferences", preferences_path(categories: params[:categories]) %>
 <% if @restaurants.length() == 0 %>
     <h3>There are no open restaurants with your current preferences:</h3>
     <%= @cat %></br></br>
     <%= link_to 'Change Preferences', preferences_path %>
 <% else %>
-    <h3><%= @restaurants.length() %> open restaurants with your preferences:</h3>
-    <% @restaurants.each do |rest| %>
-    <%= rest["name"] %></br>
+    <h3><%= @restaurants.length() %> open restaurants matching those filters:</h3>
+    <% @restaurants.each do |restaurant| %>
+    <%= restaurant["name"] %></br>
     <% end %></br>
-    <%= @cat %></br>
+    
 <% end %>

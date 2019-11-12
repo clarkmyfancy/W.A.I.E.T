@@ -1,22 +1,59 @@
 <%= "Select Preferences" %>
 
 <%= form_tag results_path do %>
-  <input type="checkbox" name="restCategory[]" value="breakfast">Breakfast</input>
-  <input type="checkbox" name="restCategory[]" value="lunch">Lunch</input>
-  <input type="checkbox" name="restCategory[]" value="dinner">Dinner</input>
-  <input type="checkbox" name="restCategory[]" value="mexican">Mexican</input>
-  <input type="checkbox" name="restCategory[]" value="italian">Italian</input>
-  <input type="checkbox" name="restCategory[]" value="asian">Asian</input>
-  <input type="checkbox" name="restCategory[]" value="american">American</input>
-  <input type="checkbox" name="restCategory[]" value="vegan">Vegan</input>
-  <input type="checkbox" name="restCategory[]" value="vegetarian">Vegetarian</input>
-  <input type="checkbox" name="restCategory[]" value="fast food">Fast Food</input>
-  <input type="checkbox" name="restCategory[]" value="gluten free">Gluten Free</input>
+  <%= label_tag :Breakfast do %>
+    <%= check_box_tag "restCategory[]", 'breakfast', params[:categories].include?('breakfast')%>
+    Breakfast
+  <% end %>
+
+  <%= label_tag :Lunch do %>
+    <%= check_box_tag "restCategory[]", 'lunch', params[:categories].include?('lunch')%>
+    Lunch
+  <% end %> 
+
+  <%= label_tag :Dinner do %>
+    <%= check_box_tag "restCategory[]", 'dinner', params[:categories].include?('dinner')%>
+    Dinner
+  <% end %> 
+
+  <%= label_tag :Mexican do %>
+    <%= check_box_tag "restCategory[]", 'mexican', params[:categories].include?('mexican')%>
+    Mexican
+  <% end %> 
+
+  <%= label_tag :Italian do %>
+    <%= check_box_tag "restCategory[]", 'italian', params[:categories].include?('italian')%>
+    Italian
+  <% end %>
+
+  <%= label_tag :Asian do %>
+    <%= check_box_tag "restCategory[]", 'asian', params[:categories].include?('asian')%>
+    Asian
+  <% end %>
+
+  <%= label_tag :American do %>
+    <%= check_box_tag "restCategory[]", 'american', params[:categories].include?('american')%>
+    American
+  <% end %>
+
+  <%= label_tag :Vegan do %>
+    <%= check_box_tag "restCategory[]", 'vegan', params[:categories].include?('vegan')%>
+    Vegan
+  <% end %>
+
+  <%= label_tag :Vegetarian do %>
+    <%= check_box_tag "restCategory[]", 'vegetarian', params[:categories].include?('vegetarian')%>
+    Vegetarian
+  <% end %>
+
+  <%= label_tag :Fast_Food do %>
+    <%= check_box_tag "restCategory[]", 'fast food', params[:categories].include?('fast food')%>
+    Fast Food
+  <% end %>
+
+  <%= label_tag :Gluten_Free do %>
+    <%= check_box_tag "restCategory[]", 'gluten free', params[:categories].include?('gluten free')%>
+    Gluten Free
+  <% end %>
 <%= submit_tag "Submit" %>
 <% end %>
-<!--<button class="button0 button0" name="WAIET">WAIET</button>-->
-<!--<button class="button button1">Breakfast</button>-->
-<!--<button class="button button2">Lunch</button>-->
-<!--<button class="button button3">Dinner</button>-->
-<!--<button class="button button4">Submit</button>-->
-

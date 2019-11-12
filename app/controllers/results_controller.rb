@@ -4,7 +4,7 @@
 class ResultsController < ApplicationController
 
     def index 
-        @cat = [ params[:categories].join(' ') ]
+        @cat = [params[:categories].join(' ')]
         restaurants = Client.search(@cat)
         @restaurants = restaurants["businesses"].uniq {|biz| biz["name"] } unless restaurants == nil
     end
