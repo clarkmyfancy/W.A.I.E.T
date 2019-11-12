@@ -1,6 +1,5 @@
-<%= "Select Preferences" %>
-
 <%= form_tag results_path do %>
+  <%= "Select Preferences" %>
   <%= label_tag :Breakfast do %>
     <%= check_box_tag "restCategory[]", 'breakfast', params[:categories] && params[:categories].include?('breakfast')%>
     Breakfast
@@ -54,6 +53,24 @@
   <%= label_tag :Gluten_Free do %>
     <%= check_box_tag "restCategory[]", 'gluten free', params[:categories] && params[:categories].include?('gluten free')%>
     Gluten Free
+  <% end %></br>
+  
+  <%= "Select Prices" %>
+  <%= label_tag :One do %>
+    <%= check_box_tag "restPrice[]", '1', params[:prices] && params[:prices].include?('1')%>
+    $ (under $10)
+  <% end %>
+  <%= label_tag :Two do %>
+    <%= check_box_tag "restPrice[]", '2', params[:prices] && params[:prices].include?('2')%>
+    $$ ($11-30)
+  <% end %>
+  <%= label_tag :Three do %>
+    <%= check_box_tag "restPrice[]", '3', params[:prices] && params[:prices].include?('3')%>
+    $$$ ($31-60)
+  <% end %>
+  <%= label_tag :Four do %>
+    <%= check_box_tag "restPrice[]", '4', params[:prices] && params[:prices].include?('4')%>
+    $$$$ ($61+)
   <% end %>
 <%= submit_tag "Submit" %>
 <% end %>
