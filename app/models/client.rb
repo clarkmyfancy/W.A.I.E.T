@@ -7,19 +7,17 @@ class Client < ApplicationRecord
   # from https://www.yelp.com/developers/v3/manage_app
   API_KEY = "d-yJQSQLB6kXGGMW3-FDyGNeBXW-j89QbZxiWayPSg_9zKqo3IGyKhLZCXpDxM45ClJLMVoJzLt-w-FJBP4G4muQEq-PrNVw35r56-frAONXuqGPNlGGGFEqeZjGXHYx"
   
-  
   # Constants, do not change these
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
-  
   
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_TERM = ['food']
   DEFAULT_LOCATION = "College Station, TX"
   DEFAULT_PRICE = "1"
   DEFAULT_OPEN = true
-  SEARCH_LIMIT = 10
+  SEARCH_LIMIT = 20
   
   term = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
   price = ["1", "2", "3"]
