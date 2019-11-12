@@ -1,6 +1,8 @@
 <%= "Preferences: "%>
-<%= @cat %></br>
-<%= link_to "Edit Preferences", preferences_path(categories: params[:categories]) %>
+<%= @cat %>,
+<%= "Price Range: "%>
+<%= @prices %></br>
+<%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
 <% if @restaurants.length() == 0 %>
     <h3>There are no open restaurants with your current preferences.</h3>
 <% else %>
