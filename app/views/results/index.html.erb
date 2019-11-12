@@ -1,5 +1,6 @@
 <% if @restaurants.length() == 0 %>
     <h3>There are no open restaurants with your current preferences:</h3>
+    <%= @cat %></br></br>
     <%= link_to 'Change Preferences', preferences_path %>
 <% else %>
     <h3><%= @restaurants.length() %> open restaurants with your preferences:</h3>
