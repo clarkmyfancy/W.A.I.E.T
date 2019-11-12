@@ -2,9 +2,7 @@
 <%= @cat %></br>
 <%= link_to "Edit Preferences", preferences_path(categories: params[:categories]) %>
 <% if @restaurants.length() == 0 %>
-    <h3>There are no open restaurants with your current preferences:</h3>
-    <%= @cat %></br></br>
-    <%= link_to 'Change Preferences', preferences_path %>
+    <h3>There are no open restaurants with your current preferences.</h3>
 <% else %>
     <h3><%= @restaurants.length() %> open restaurants matching those filters:</h3>
     <% @restaurants.each do |restaurant| %>

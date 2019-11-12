@@ -15,7 +15,7 @@ class Client < ApplicationRecord
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_TERM = ['food']
   DEFAULT_LOCATION = "College Station, TX"
-  DEFAULT_PRICE = "1"
+  DEFAULT_PRICE = ["1", "2", "3", "4"]
   DEFAULT_OPEN = true
   SEARCH_LIMIT = 20
   
