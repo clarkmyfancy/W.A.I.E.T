@@ -2,57 +2,57 @@
 
 <%= form_tag results_path do %>
   <%= label_tag :Breakfast do %>
-    <%= check_box_tag "restCategory[]", 'breakfast', params[:categories].include?('breakfast')%>
+    <%= check_box_tag "restCategory[]", 'breakfast', params[:categories] && params[:categories].include?('breakfast')%>
     Breakfast
   <% end %>
 
   <%= label_tag :Lunch do %>
-    <%= check_box_tag "restCategory[]", 'lunch', params[:categories].include?('lunch')%>
+    <%= check_box_tag "restCategory[]", 'lunch', params[:categories] && params[:categories].include?('lunch')%>
     Lunch
   <% end %> 
 
   <%= label_tag :Dinner do %>
-    <%= check_box_tag "restCategory[]", 'dinner', params[:categories].include?('dinner')%>
+    <%= check_box_tag "restCategory[]", 'dinner', params[:categories] && params[:categories].include?('dinner')%>
     Dinner
   <% end %> 
 
   <%= label_tag :Mexican do %>
-    <%= check_box_tag "restCategory[]", 'mexican', params[:categories].include?('mexican')%>
+    <%= check_box_tag "restCategory[]", 'mexican', params[:categories] && params[:categories].include?('mexican')%>
     Mexican
   <% end %> 
 
   <%= label_tag :Italian do %>
-    <%= check_box_tag "restCategory[]", 'italian', params[:categories].include?('italian')%>
+    <%= check_box_tag "restCategory[]", 'italian', params[:categories] && params[:categories].include?('italian')%>
     Italian
   <% end %>
 
   <%= label_tag :Asian do %>
-    <%= check_box_tag "restCategory[]", 'asian', params[:categories].include?('asian')%>
+    <%= check_box_tag "restCategory[]", 'asian', params[:categories] && params[:categories].include?('asian')%>
     Asian
   <% end %>
 
   <%= label_tag :American do %>
-    <%= check_box_tag "restCategory[]", 'american', params[:categories].include?('american')%>
+    <%= check_box_tag "restCategory[]", 'american', params[:categories] && params[:categories].include?('american')%>
     American
   <% end %>
 
   <%= label_tag :Vegan do %>
-    <%= check_box_tag "restCategory[]", 'vegan', params[:categories].include?('vegan')%>
+    <%= check_box_tag "restCategory[]", 'vegan', params[:categories] && params[:categories].include?('vegan')%>
     Vegan
   <% end %>
 
   <%= label_tag :Vegetarian do %>
-    <%= check_box_tag "restCategory[]", 'vegetarian', params[:categories].include?('vegetarian')%>
+    <%= check_box_tag "restCategory[]", 'vegetarian', params[:categories] && params[:categories].include?('vegetarian')%>
     Vegetarian
   <% end %>
 
   <%= label_tag :Fast_Food do %>
-    <%= check_box_tag "restCategory[]", 'fast food', params[:categories].include?('fast food')%>
+    <%= check_box_tag "restCategory[]", 'fast food', params[:categories] && params[:categories].include?('fast food')%>
     Fast Food
   <% end %>
 
   <%= label_tag :Gluten_Free do %>
-    <%= check_box_tag "restCategory[]", 'gluten free', params[:categories].include?('gluten free')%>
+    <%= check_box_tag "restCategory[]", 'gluten free', params[:categories] && params[:categories].include?('gluten free')%>
     Gluten Free
   <% end %>
 <%= submit_tag "Submit" %>
