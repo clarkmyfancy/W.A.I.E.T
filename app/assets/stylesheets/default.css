@@ -1,3 +1,27 @@
+.page_title {
+  text-align: center;
+}
+
+.preferences_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; 
+  font-size: 24px !important;
+  padding: 10px 60px 10px 60px !important;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari Compatibility*/
+}
+
+.preferences_button:hover {
+  background-color: #4CAF50;
+  color: black;
+}
+
 .button0{
   width: 1440px;
   height: 116px;
