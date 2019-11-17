@@ -78,3 +78,11 @@ div.header {
 
   color: #FFFFFF;
 }
+
+.dislike-button{
+  background-color: #f44336;
+}
+
+.like-button{
+  background-color: #4caf50;
+}
