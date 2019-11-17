@@ -1,4 +1,7 @@
-<%= form_tag results_path(counter: 0) do %>
+<div class="header">
+    <p class="page_title">WAIET</p>
+</div>
+<%= form_tag results_path(counter: 0, init: params[:init]) do %> 
   <%= "Select Preferences" %>
   <%= label_tag :Breakfast do %>
     <%= check_box_tag "restCategory[]", 'breakfast', params[:categories] && params[:categories].include?('breakfast')%>
