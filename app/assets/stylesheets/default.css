@@ -1,11 +1,21 @@
+div.header {
+  background: linear-gradient(90deg, rgba(215,68,0,1) 0%, rgba(205,154,58,1) 50%, rgba(209,218,0,1) 100%);
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+
 .page_title {
   text-align: center;
+  margin: 0;
 }
 
 .preferences_button {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50; 
+  background: linear-gradient(90deg, rgba(195,62,0,1) 0%, rgba(255,198,171,1) 100%);
   font-size: 24px !important;
   padding: 10px 60px 10px 60px !important;
   border-radius: 5px;
@@ -13,13 +23,6 @@
   text-decoration: none;
   display: block;
   margin: auto;
-  transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s; /* Safari Compatibility*/
-}
-
-.preferences_button:hover {
-  background-color: #4CAF50;
-  color: black;
 }
 
 .button0{
