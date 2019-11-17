@@ -1,11 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-<<<<<<< HEAD
 ruby '>=2.6.3'
-=======
-ruby '2.6.5'
->>>>>>> 9c3b558e8a54e2f5dffbe339056a298ce49696e0
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
