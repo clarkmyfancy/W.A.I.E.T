@@ -3,60 +3,62 @@
 </div>
 <%= form_tag results_path(counter: 0) do %>
   <%= "Select Preferences" %>
-  <%= label_tag :Breakfast do %>
+
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'breakfast', params[:categories] && params[:categories].include?('breakfast')%>
-    Breakfast
-  <% end %>
+    Breakfast<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Lunch do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'lunch', params[:categories] && params[:categories].include?('lunch')%>
-    Lunch
-  <% end %> 
+    Lunch<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Dinner do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'dinner', params[:categories] && params[:categories].include?('dinner')%>
-    Dinner
-  <% end %> 
+    Dinner<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Mexican do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'mexican', params[:categories] && params[:categories].include?('mexican')%>
-    Mexican
-  <% end %> 
+    Mexican<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Italian do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'italian', params[:categories] && params[:categories].include?('italian')%>
-    Italian
-  <% end %>
+    Italian<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Asian do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'asian', params[:categories] && params[:categories].include?('asian')%>
-    Asian
-  <% end %>
+    Asian<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :American do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'american', params[:categories] && params[:categories].include?('american')%>
-    American
-  <% end %>
+    American<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Vegan do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'vegan', params[:categories] && params[:categories].include?('vegan')%>
-    Vegan
-  <% end %>
+    Vegan<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Vegetarian do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'vegetarian', params[:categories] && params[:categories].include?('vegetarian')%>
-    Vegetarian
-  <% end %>
+    Vegetarian<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Fast_Food do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'fast food', params[:categories] && params[:categories].include?('fast food')%>
-    Fast Food
-  <% end %>
+    Fast Food<span class="checkmark"></span>
+  </label>
 
-  <%= label_tag :Gluten_Free do %>
+  <label class="container">
     <%= check_box_tag "restCategory[]", 'gluten free', params[:categories] && params[:categories].include?('gluten free')%>
-    Gluten Free
-  <% end %></br>
+    Gluten Free<span class="checkmark"></span>
+  </label>
+  <br>
   
   <%= "Select Prices" %>
   <%= label_tag :One do %>
