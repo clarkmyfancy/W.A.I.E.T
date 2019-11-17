@@ -17,7 +17,8 @@ class Client < ApplicationRecord
   DEFAULT_LOCATION = "College Station, TX"
   DEFAULT_PRICE = ["1, 2, 3, 4"]
   DEFAULT_OPEN = true
-  SEARCH_LIMIT = 20
+  SEARCH_LIMIT = 10
+  
   
   term = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
   price = ["1", "2", "3"]
