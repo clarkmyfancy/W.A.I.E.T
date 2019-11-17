@@ -18,9 +18,9 @@
         <h6> <%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
         </br>
         <%= button_to "Like", {:controller => "results", :action => "index", 
-                :restCategory => @cat, :restPrice => @price_range, :counter => @count += 1, :liked_pos => @count-1, :init => true}, {class: "w3-left"} %>
+                :restCategory => @cat, :restPrice => @price_range, :counter => @count += 1, :liked_pos => @count-1, :init => true, random_ind: params[:random_ind]}, {class: "w3-left"} %>
         <%= button_to "Disike", {:controller => "results", :action => "index", 
-                :restCategory => @cat, :restPrice => @price_range, :counter => @count, :init => true}, {class: "w3-right"} %>
+                :restCategory => @cat, :restPrice => @price_range, :counter => @count, :init => true, random_ind: params[:random_ind]}, {class: "w3-right"} %>
         <h6>___________________________________</h6></br>
     <% end %>
 <% else %>
