@@ -7,22 +7,37 @@
 <%= @price_range %>
 <br>
 <%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
-<% if @size == 0 %>
-    <h3>There are no open restaurants with your current preferences:</h3>
+<% if !@end_of_list %>
+    <% if @size == 0 %>
+        <h3>There are no open restaurants with your current preferences:</h3>
+    <% else %>
+        <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
+        <h2>__________________________________________________________________________</h2>
+        
+        <%= image_tag(@restaurant["image_url"], size: "70x70")%>
+        <h4> <%= (@restaurant["name"]) %> </h4>
+        <h6> <%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
+        </br>
+        <%= button_to "Like", {:controller => "results", :action => "index", 
+                :restCategory => @cat, :restPrice => @price_range, :counter => @count += 1, :liked_pos => @count-1, :init => true}, {class: "w3-left"} %>
+        <%= button_to "Disike", {:controller => "results", :action => "index", 
+                :restCategory => @cat, :restPrice => @price_range, :counter => @count, :init => true}, {class: "w3-right"} %>
+        <h6>___________________________________</h6></br>
+    <% end %>
 <% else %>
-    <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
-    <h2>__________________________________________________________________________</h2>
-    
-    <%= image_tag(@restaurant["image_url"], size: "100x100")%>
-    <h4> <%= (@restaurant["name"]) %> </h4>
-    <h6> <%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-    </br>
-    <%= button_to "Like", {:controller => "results", :action => "index", 
-            :restCategory => @cat, :restPrice => @price_range, :counter => @count += 1}, {class: "w3-left"} %>
-    <%= button_to "Disike", {:controller => "results", :action => "index", 
-            :restCategory => @cat, :restPrice => @price_range, :counter => @count }, {class: "w3-right"} %>
-    <h6>___________________________________</h6></br>
+    <% if @final_rests %>
+        <h3>Restaurants you liked with your current preferences:</h3>
+        <h2>__________________________________________________________________________</h2>
+        <% @final_rests.each do |r| %>
+            <%= image_tag(r["image_url"], size: "70x70")%>
+            <h4> <%= (r["name"]) %> </h4>
+            <h6> <%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
+            </br>
+            <h6>___________________________________</h6></br>
+        <% end %>
+    <% end %>
 <% end %>
+    
 
 
 
