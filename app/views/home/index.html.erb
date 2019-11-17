@@ -1,2 +1,6 @@
-<h1>Home</h1>
-<%= link_to 'Preferences', preferences_path %>
+<h1 class="page_title">Where Am I Eating Tonight?</h1>
+<br>
+<br>
+<br>
+
+<%= button_to "Select Preferences", { :controller => "preferences", :action => "index" }, :method => :get, :class => 'preferences_button' %>
