@@ -19,11 +19,6 @@
         <%= button_to "Disike", {:controller => "results", :action => "index", 
                 :restCategory => @cat, :restPrice => @price_range, :counter => @count, :init => true}, {class: "w3-right"} %>
         <h6>___________________________________</h6></br>
-        <% if @final_rests %>
-            <% @final_rests.each do |r| %>
-            <%= r %>
-            <% end %>
-        <% end %>
     <% end %>
 <% else %>
     <% if @final_rests %>
