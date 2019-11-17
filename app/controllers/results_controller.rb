@@ -3,14 +3,13 @@
 
 class ResultsController < ApplicationController
     @@liked_rests = []
-    @@seen_rests = []
     def index 
         @cat = params[:categories]? [params[:categories].join(' ')] : ['food']
         @price_range = params[:prices]? [params[:prices].join(',')] : ['1,2,3,4']
         results = Client.search(@cat, @price_range)
         restaurants = results["businesses"].uniq {|biz| biz["name"] } unless results == nil
         @size = restaurants.length()
-        randomized_ind = params[:random_ind].select{ |i| i.to_i <= @size }
+        randomized_ind = params[:random_ind].select{ |i| i.to_i < @size }
         @count = params[:counter].to_i
         @curr_rest_ind = randomized_ind[@count].to_i
         @restaurant = restaurants[@curr_rest_ind]
