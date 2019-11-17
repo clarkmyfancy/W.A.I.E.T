@@ -61,21 +61,25 @@
   <br>
   
   <%= "Select Prices" %>
-  <%= label_tag :One do %>
+  <label>
     <%= check_box_tag "restPrice[]", '1', params[:prices] && params[:prices].include?('1')%>
     $ (under $10)
-  <% end %>
-  <%= label_tag :Two do %>
+  </label>
+
+  <label>
     <%= check_box_tag "restPrice[]", '2', params[:prices] && params[:prices].include?('2')%>
     $$ ($11-30)
-  <% end %>
-  <%= label_tag :Three do %>
+  </label>
+
+  <label>
     <%= check_box_tag "restPrice[]", '3', params[:prices] && params[:prices].include?('3')%>
     $$$ ($31-60)
-  <% end %>
-  <%= label_tag :Four do %>
+  </label>
+
+  <label>
     <%= check_box_tag "restPrice[]", '4', params[:prices] && params[:prices].include?('4')%>
     $$$$ ($61+)
-  <% end %>
+  </label>
+
 <%= submit_tag "Submit" %>
 <% end %>
