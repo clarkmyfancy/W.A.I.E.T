@@ -1,0 +1,77 @@
+.page_title {
+  text-align: center;
+}
+
+.preferences_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; 
+  font-size: 24px !important;
+  padding: 10px 60px 10px 60px !important;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari Compatibility*/
+}
+
+.preferences_button:hover {
+  background-color: #4CAF50;
+  color: black;
+}
+
+.button0{
+  width: 1440px;
+  height: 116px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
+  border: 1px solid #C1C1C1;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+
+font-family: Flavors;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 123px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+mix-blend-mode: normal;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button {
+  width: 205px;
+  height: 140px;
+  left: 236px;
+  top: 316px;
+
+  background: linear-gradient(90deg, #D85E48 10.24%, #EF956D 77.56%);
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+
+  width: 188px;
+  height: 42px;
+  left: calc(50% - 188px/2 - 381px);
+  top: calc(50% - 42px/2 - 126px);
+
+  font-family: Abhaya Libre;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+}

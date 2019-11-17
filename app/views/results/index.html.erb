@@ -1,0 +1,19 @@
+<%= "Preferences: "%>
+<%= @cat %>,
+<%= "Price Range: "%>
+<%= @prices %></br>
+<%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
+<% if @restaurants.length() == 0 %>
+    <h3>There are no open restaurants with your current preferences:</h3>
+<% else %>
+    <h3><%= @restaurants.length() %> open restaurants matching those filters:</h3>
+    <h2>__________________________________________________________________________</h2>
+    <% @restaurants.each do |restaurant| %>
+    <%= image_tag(restaurant["image_url"], size: "70x70")%>
+    <h4> <%= restaurant["name"] %> </h4>
+    <h6> <%= restaurant["rating"]%> rating with <%= restaurant["review_count"]%> reviews.</h6>
+    <h6>___________________________________</h6>
+    </br>
+    <% end %></br>
+    
+<% end %>
