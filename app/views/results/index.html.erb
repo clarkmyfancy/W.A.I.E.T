@@ -1,6 +1,6 @@
 <div class="header">
     <p class="page_title">WAIET</p>
-</div>
+</div></br>
 <%= "Preferences: "%>
 <%= @cat %>,
 <%= "Price Range: "%>
@@ -24,12 +24,11 @@
             <section>
                 <div class = "choice-column">
                     <% @photos.each do |p| %>
-                            <%= image_tag(p, :height => 250, :crop => "pad")%>
+                            <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
                     <% end %>
                     <h4><a href=<%= (@restaurant["url"]) %> target="_blank"><%= (@restaurant["name"]) %></a></h4>
                     <h5><%= @restaurant["location"]["address1"] %></h5>
                     <h6><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-                    </br>
                 </div>
             </section>
             <div class = "like-column">
