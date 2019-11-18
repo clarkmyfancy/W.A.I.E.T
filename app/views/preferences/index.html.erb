@@ -1,9 +1,11 @@
 <div class="header">
     <p class="page_title">WAIET</p>
 </div>
+<div class="center-div">
 <%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
   <%= "Select Preferences (Default: \"Food\")" %></br></br>
 
+<div class="divider">
   <label class="container">
     <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
     Breakfast<span class="checkmark"></span>
@@ -18,7 +20,9 @@
     <%= check_box_tag "categories[]", 'dinner', params[:categories] && params[:categories][0].include?('dinner')%>
     Dinner<span class="checkmark"></span>
   </label>
+</div>
 
+<div class="divider">
   <label class="container">
     <%= check_box_tag "categories[]", 'mexican', params[:categories] && params[:categories][0].include?('mexican')%>
     Mexican<span class="checkmark"></span>
@@ -38,7 +42,9 @@
     <%= check_box_tag "categories[]", 'american', params[:categories] && params[:categories][0].include?('american')%>
     American<span class="checkmark"></span>
   </label>
+</div>
 
+<div class="divider">
   <label class="container">
     <%= check_box_tag "categories[]", 'vegan', params[:categories] && params[:categories][0].include?('vegan')%>
     Vegan<span class="checkmark"></span>
@@ -58,7 +64,8 @@
     <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
     Gluten Free<span class="checkmark"></span>
   </label>
-  </br></br></br>
+</div>
+  </br></br>
   
   <%= "Select Prices (Default: Any Price)" %></br></br>
   <label class="container">
@@ -83,3 +90,4 @@
 
 <%= submit_tag "Submit" , {class: "submit"} %>
 <% end %>
+</div>

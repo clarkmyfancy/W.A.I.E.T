@@ -1,10 +1,6 @@
 <div class="header">
     <p class="page_title">WAIET</p>
 </div>
-<%= "Preferences: "%>
-<%= @cat %>,
-<%= "Price Range: "%>
-<%= @price_range %>
 <br>
 <% if !@end_of_list %>
 <%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %>
@@ -14,17 +10,6 @@
         <section>
         <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
         <h2>__________________________________________________________________________</h2>
-<<<<<<< HEAD
-        <%= image_tag(@restaurant["image_url"], size: "300x300", :class => "img")%>
-        <h4> <%= (@restaurant["name"]) %> </h4>
-        <h6> <%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-        </br>
-        <%= button_to "Like", {:controller => "results", :action => "index", 
-                :restCategory => @cat, :restPrice => @price_range, :counter => @count += 1, :liked_pos => @count-1, :init => true, random_ind: params[:random_ind]}, {class: "w3-left"} %>
-        <%= button_to "Disike", {:controller => "results", :action => "index", 
-                :restCategory => @cat, :restPrice => @price_range, :counter => @count, :init => true, random_ind: params[:random_ind]}, {class: "w3-right"} %>
-        <h6>___________________________________</h6></br>
-=======
         </section>
         <div class = "row">
             <div class = "dislike-column">
@@ -35,12 +20,11 @@
             <section>
                 <div class = "choice-column">
                     <% @photos.each do |p| %>
-                            <%= image_tag(p, :height => 250, :crop => "pad")%>
+                            <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
                     <% end %>
                     <h4><a href=<%= (@restaurant["url"]) %> target="_blank"><%= (@restaurant["name"]) %></a></h4>
                     <h5><%= @restaurant["location"]["address1"] %></h5>
                     <h6><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-                    </br>
                 </div>
             </section>
             <div class = "like-column">
@@ -51,7 +35,6 @@
         <section>
         <h2>__________________________________________________________________________</h2></br>
         </section>
->>>>>>> c79e72ec82a88d6fd0b207d4f2ad379fea768f64
     <% end %>
 <% else %>
     <% if @final_rests.empty? %>
@@ -63,12 +46,6 @@
         <h3>Restaurants you liked with your current preferences:</h3>
         <h2>__________________________________________________________________________</h2>
         <% @final_rests.each do |r| %>
-<<<<<<< HEAD
-            <%= image_tag(r["image_url"], size: "100x100")%>
-            <h4> <%= (r["name"]) %> </h4>
-            <h6> <%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
-            <h6>___________________________________</h6></br>
-=======
             <% Client.business(r["id"])["photos"].each do |p| %>
                 <%= image_tag(p,  :height => 250, :crop => "pad")%>
             <% end %>
@@ -76,7 +53,6 @@
             <h5><%= r["location"]["address1"] %></h5>
             <h6><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
             <h2>__________________________________________________________________________</h2></br>
->>>>>>> c79e72ec82a88d6fd0b207d4f2ad379fea768f64
         <% end %>
         </section>
     <% end %>

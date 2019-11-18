@@ -76,6 +76,13 @@ class Client < ApplicationRecord
   #        }
   #
   # Returns a parsed json object of the request
+  def self.business(business_id)
+    url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
+  
+    response = HTTP.auth("Bearer #{API_KEY}").get(url)
+    response.parse
+  end
+  
   options = {}
   OptionParser.new do |opts|
     opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
