@@ -39,6 +39,16 @@
   </label>
   
   <label class="container">
+    <%= check_box_tag "categories[]", 'sweets', params[:categories] && params[:categories][0].include?('sweets')%>
+    Sweets<span class="checkmark"></span>
+  </label>
+  
+  <label class="container">
+    <%= check_box_tag "categories[]", 'barbeque', params[:categories] && params[:categories][0].include?('barbeque')%>
+    Barbeque<span class="checkmark"></span>
+  </label>
+  
+  <label class="container">
     <%= check_box_tag "categories[]", 'seafood', params[:categories] && params[:categories][0].include?('seafood')%>
     Seafood<span class="checkmark"></span>
   </label>
@@ -49,8 +59,8 @@
   </label>
   
   <label class="container">
-    <%= check_box_tag "categories[]", 'barbeque', params[:categories] && params[:categories][0].include?('barbeque')%>
-    Barbeque<span class="checkmark"></span>
+    <%= check_box_tag "categories[]", 'fast food', params[:categories] && params[:categories][0].include?('fast food')%>
+    Fast Food<span class="checkmark"></span>
   </label>
 
   <label class="container">
@@ -64,15 +74,9 @@
   </label>
 
   <label class="container">
-    <%= check_box_tag "categories[]", 'fast food', params[:categories] && params[:categories][0].include?('fast food')%>
-    Fast Food<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
     <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
     Gluten Free<span class="checkmark"></span>
-  </label>
-  </br>
+  </label></br>
   
   <h2 class="price_selection">Select Prices</h2>
   <label class="container">
