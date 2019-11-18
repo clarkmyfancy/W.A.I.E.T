@@ -1,10 +1,6 @@
 <div class="header">
     <p class="page_title">WAIET</p>
 </div>
-<%= "Preferences: "%>
-<%= @cat %>,
-<%= "Price Range: "%>
-<%= @price_range %>
 <br>
 <% if !@end_of_list %>
 <%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %>
