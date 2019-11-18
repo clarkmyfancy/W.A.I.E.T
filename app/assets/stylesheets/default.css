@@ -100,8 +100,8 @@ div.header {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 40px;
+  font-size: 24px;
+  margin: 80% 32px;
   cursor: pointer;
 }
 
@@ -113,7 +113,19 @@ div.header {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 24px;
+  margin: 80% 2px;
   cursor: pointer;
 }
+
+.yelp{
+  width: 70px;
+  height: 70px;
+  margin:-20px 0px ;
+}
+
+.yelp:hover{
+  color: white;
+  background: white;
+}
+
