@@ -15,7 +15,7 @@ class Client < ApplicationRecord
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_TERM = ['food']
   DEFAULT_LOCATION = "College Station, TX"
-  DEFAULT_PRICE = ["1, 2, 3, 4"]
+  DEFAULT_PRICE = "1,2,3,4".split(",")
   DEFAULT_OPEN = true
   SEARCH_LIMIT = 5
   
@@ -76,7 +76,6 @@ class Client < ApplicationRecord
   #        }
   #
   # Returns a parsed json object of the request
-
   options = {}
   OptionParser.new do |opts|
     opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
