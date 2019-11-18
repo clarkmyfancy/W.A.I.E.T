@@ -86,17 +86,17 @@ section {
 
 .dislike-column{
   float: left;
-  width: 15%;
+  width: 10%;
 }
 
 .choice-column{
   float: left;
-  width: 70%;
+  width: 80%;
 }
 
 .like-column{
   float: left;
-  width: 15%;
+  width: 10%;
 }
 
 .row:after {
