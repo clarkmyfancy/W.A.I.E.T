@@ -17,7 +17,12 @@ class Client < ApplicationRecord
   DEFAULT_LOCATION = "College Station, TX"
   DEFAULT_PRICE = "1,2,3,4".split(",")
   DEFAULT_OPEN = true
-  SEARCH_LIMIT = 5
+  SEARCH_LIMIT = 10
+  
+  
+  term = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
+  price = ["1", "2", "3"]
+  
   
   # Make a request to the Fusion search endpoint. Full documentation is online at:
   # https://www.yelp.com/developers/documentation/v3/business_search
@@ -76,6 +81,14 @@ class Client < ApplicationRecord
   #        }
   #
   # Returns a parsed json object of the request
+  def self.business(business_id)
+    url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
+  
+    response = HTTP.auth("Bearer #{API_KEY}").get(url)
+    response.parse
+  end
+  
+  
   options = {}
   OptionParser.new do |opts|
     opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
@@ -119,6 +132,18 @@ class Client < ApplicationRecord
     #puts "Found #{response["total"]} businesses. Listing #{SEARCH_LIMIT}:"
     businesses = response["businesses"].uniq {|biz| biz["name"] }
     businesses.each { |b| puts b["name"] }
+    
+  when "lookup"
+    business_id = options.fetch(:business_id, DEFAULT_BUSINESS_ID)
+  
+    raise "term is not a valid parameter for lookup" if options.key?(:term)
+    raise "price is not a valid parameter for lookup" if option.key?(:price)
+    raise "open now is not a valid parameter for lookup" if option.key?(:open_now)
+  
+    response = business(business_id)
+  
+    puts "Found business with id #{business_id}:"
+    puts JSON.pretty_generate(response)
   else
     puts "Please specify a command: search or lookup"
   end
