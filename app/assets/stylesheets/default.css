@@ -20,7 +20,7 @@ div.header {
 .preferences_button {
   background-color: white;
   color: black;
-  background: linear-gradient(90deg, rgba(195,62,0,1) 0%, rgba(255,198,171,1) 100%);
+  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
   font-size: 24px !important;
   padding: 10px 60px 10px 60px !important;
   border-radius: 5px;
@@ -33,12 +33,14 @@ div.header {
 .preference_selection {
   margin-bottom: 0px;
   margin-left: 35px;
+  font-size: 20px;
 }
 
 .price_selection {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
   margin-left: 35px;
+  font-size: 20px;
 }
 
 .button {
@@ -99,7 +101,7 @@ div.header {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 40px;
   cursor: pointer;
 }
 
