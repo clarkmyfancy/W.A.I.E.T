@@ -18,11 +18,14 @@ class Client < ApplicationRecord
   DEFAULT_PRICE = "1,2,3,4".split(",")
   DEFAULT_OPEN = true
   SEARCH_LIMIT = 10
+<<<<<<< HEAD
   
   
   term = ["breakfast", "dinner", "lunch", "mexican", "italian", "asian", "american", "vegetarian", "vegan", "fast food"]
   price = ["1", "2", "3"]
   
+=======
+>>>>>>> cb3a26c19f7c246b6c07f21a5b9ca5363f75b780
   
   # Make a request to the Fusion search endpoint. Full documentation is online at:
   # https://www.yelp.com/developers/documentation/v3/business_search
@@ -88,7 +91,10 @@ class Client < ApplicationRecord
     response.parse
   end
   
+<<<<<<< HEAD
   
+=======
+>>>>>>> cb3a26c19f7c246b6c07f21a5b9ca5363f75b780
   options = {}
   OptionParser.new do |opts|
     opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
