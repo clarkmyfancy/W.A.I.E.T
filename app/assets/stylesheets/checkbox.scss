@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-<style>
-/* The container */
 .container {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
 }
 
 /* Hide the browser's default checkbox */
@@ -33,7 +28,6 @@
   height: 25px;
   width: 25px;
   background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
- 
 }
 
 /* On mouse-over, add a grey background color */
@@ -70,26 +64,7 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-</style>
-<body>
 
-<h1>Custom Checkboxes</h1>
-<label class="container">One
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Two
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Three
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Four
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-</body>
-</html>
+.submit{
+  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
+}
