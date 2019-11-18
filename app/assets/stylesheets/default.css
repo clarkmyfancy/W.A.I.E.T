@@ -14,10 +14,16 @@ section {
 
 .page_title {
   text-align: center;
+  font-family: Georgia;
   margin: 0;
 }
 
+.font-setting {
+  font-family: Georgia;
+}
+
 .preferences_button {
+  font-family: Georgia;
   background-color: white;
   color: black;
   background: linear-gradient(90deg, rgba(195,62,0,1) 0%, rgba(255,198,171,1) 100%);
@@ -107,6 +113,7 @@ section {
 
 .dislike-button{
   background-color: #f44336;
+  font-family: Georgia;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -119,7 +126,8 @@ section {
 }
 
 .like-button{
-    background-color: #4CAF50;
+  background-color: #4CAF50;
+  font-family: Georgia;
   border: none;
   color: white;
   padding: 15px 32px;
