@@ -2,8 +2,7 @@
     <p class="page_title">WAIET</p>
 </div>
 <%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
-  <%= "Select Preferences (Default: \"Food\")" %></br></br>
-
+  <h2 class="preference_selection">Select Preferences</h2>
   <label class="container">
     <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
     Breakfast<span class="checkmark"></span>
@@ -73,9 +72,9 @@
     <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
     Gluten Free<span class="checkmark"></span>
   </label>
-  </br></br></br>
+  </br>
   
-  <%= "Select Prices (Default: Any Price)" %></br></br>
+  <h2 class="price_selection">Select Prices</h2>
   <label class="container">
     <%= check_box_tag "prices[]", '1', params[:prices] && params[:prices].include?('1')%>
     $ (under $10)<span class="checkmark"></span>
@@ -94,7 +93,7 @@
   <label class="container">
     <%= check_box_tag "prices[]", '4', params[:prices] && params[:prices].include?('4')%>
     $$$$ ($61+)<span class="checkmark"></span>
-  </label></br></br>
+  </label></br>
 
-<%= submit_tag "Submit" , {class: "submit"} %>
+<%= submit_tag "Submit" , {class: "preferences_button"} %>
 <% end %>
