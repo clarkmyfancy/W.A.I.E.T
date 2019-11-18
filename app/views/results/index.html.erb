@@ -32,7 +32,7 @@
         <h3>Restaurants you liked with your current preferences:</h3>
         <h2>__________________________________________________________________________</h2>
         <% @final_rests.each do |r| %>
-            <%= image_tag(r["image_url"], size: "70x70")%>
+            <%= image_tag(r["image_url"], size: "300x300")%>
             <h4> <%= (r["name"]) %> </h4>
             <h6> <%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
             <h6>___________________________________</h6></br>
