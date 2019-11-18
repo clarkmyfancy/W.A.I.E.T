@@ -9,8 +9,10 @@ class ResultsController < ApplicationController
         results = Client.search(@cat, @price_range)
         restaurants = results["businesses"].uniq {|biz| biz["name"] } unless results == nil
         @size = restaurants.length()
+        randomized_ind = params[:random_ind].select{ |i| i.to_i < @size }
         @count = params[:counter].to_i
-        @restaurant = restaurants[@count]
+        @curr_rest_ind = randomized_ind[@count].to_i
+        @restaurant = restaurants[@curr_rest_ind]
         if params[:liked_pos]
             @@liked_rests.push(restaurants[params[:liked_pos].to_i]).uniq! {|rest| rest}
         end
@@ -20,6 +22,6 @@ class ResultsController < ApplicationController
 
     def create
         redirect_to results_path(categories: params[:restCategory], prices: params[:restPrice], init: params[:init], 
-                                        counter: params[:counter], liked_pos: params[:liked_pos])
+                                        counter: params[:counter], liked_pos: params[:liked_pos], random_ind: params[:random_ind])
     end
 end

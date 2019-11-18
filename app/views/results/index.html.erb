@@ -13,7 +13,7 @@
     <% else %>
         <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
         <h2>__________________________________________________________________________</h2>
-        <%= image_tag(@restaurant["image_url"], size: "200x200")%>
+        <%= image_tag(@restaurant["image_url"], size: "300x300")%>
         <h4> <%= (@restaurant["name"]) %> </h4>
         <h6> <%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
         </br>
