@@ -1,4 +1,9 @@
-div.header {
+section {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header {
   background: linear-gradient(90deg, rgba(215,68,0,1) 0%, rgba(205,154,58,1) 50%, rgba(209,218,0,1) 100%);
   text-align: center;
   color: white;
