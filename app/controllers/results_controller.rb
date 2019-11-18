@@ -5,7 +5,7 @@ class ResultsController < ApplicationController
     @@liked_rests = []
     def index 
         @cat = params[:categories]? [params[:categories].join(' ')] : ['food']
-        @price_range = params[:prices]? [params[:prices].join(',')] : ['1,2,3,4']
+        @price_range = params[:prices]? params[:prices] : ["1","2","3","4"]
         results = Client.search(@cat, @price_range)
         restaurants = results["businesses"].uniq {|biz| biz["name"] } unless results == nil
         
@@ -19,13 +19,14 @@ class ResultsController < ApplicationController
         
         @curr_rest_ind = randomized_ind[@count].to_i
         @restaurant = restaurants[@curr_rest_ind]
+        @photos = Client.business(@restaurant["id"])["photos"]
         
         @final_rests = params[:init]  ?  @@liked_rests : @@liked_rests.clear()
         @end_of_list = @count >= @size ? true : false
     end
 
     def create
-        redirect_to results_path(categories: params[:restCategory], prices: params[:restPrice], init: params[:init], 
+        redirect_to results_path(categories: params[:categories], prices: params[:prices], init: params[:init], 
                                         counter: params[:counter], liked_pos: params[:liked_pos], random_ind: params[:random_ind])
     end
 end

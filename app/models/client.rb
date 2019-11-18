@@ -15,7 +15,7 @@ class Client < ApplicationRecord
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_TERM = ['food']
   DEFAULT_LOCATION = "College Station, TX"
-  DEFAULT_PRICE = ["1, 2, 3, 4"]
+  DEFAULT_PRICE = "1,2,3,4".split(",")
   DEFAULT_OPEN = true
   SEARCH_LIMIT = 10
   
@@ -81,7 +81,7 @@ class Client < ApplicationRecord
   #        }
   #
   # Returns a parsed json object of the request
-  def business(business_id)
+  def self.business(business_id)
     url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
   
     response = HTTP.auth("Bearer #{API_KEY}").get(url)
