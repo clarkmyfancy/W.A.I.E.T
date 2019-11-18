@@ -17,7 +17,7 @@ class Client < ApplicationRecord
   DEFAULT_LOCATION = "College Station, TX"
   DEFAULT_PRICE = "1,2,3,4".split(",")
   DEFAULT_OPEN = true
-  SEARCH_LIMIT = 5
+  SEARCH_LIMIT = 10
   
   # Make a request to the Fusion search endpoint. Full documentation is online at:
   # https://www.yelp.com/developers/documentation/v3/business_search
