@@ -17,6 +17,8 @@
         </section>
         <div class = "row">
             <div class = "dislike-column">
+                <%= button_to "Dislike", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
+                        :counter => @count += 1, :init => true, :random_ind => params[:random_ind]}, {class: "dislike-button"} %>
                 <br></br>
             </div>
             <section>
@@ -32,14 +34,11 @@
             </section>
             <div class = "like-column">
                 <%= button_to "Like", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
-                        :counter => @count += 1, :liked_pos => @count-1, :init => true, :random_ind => params[:random_ind]}, {class: "like-button"} %>
-
-                <%= button_to "Dislike", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
-                        :counter => @count, :init => true, :random_ind => params[:random_ind]}, {class: "dislike-button"} %>
+                        :counter => @count, :liked_pos => @count-1, :init => true, :random_ind => params[:random_ind]}, {class: "like-button"} %>
             </div>
         </div>
         <section>
-        <h6>___________________________________</h6></br>
+        <h2>__________________________________________________________________________</h2></br>
         <h6><%= @photos %></h6>
         </section>
     <% end %>
@@ -59,7 +58,7 @@
             <h4><a href=<%= (r["url"]) %> target="_blank"><%= (r["name"]) %></a></h4>
             <h5><%= r["location"]["address1"] %></h5>
             <h6><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
-            <h6>___________________________________</h6></br>
+            <h2>__________________________________________________________________________</h2></br>
         <% end %>
         </section>
     <% end %>
