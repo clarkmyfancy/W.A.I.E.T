@@ -11,20 +11,35 @@
     <% if @size == 0 %>
         <h3>There are no open restaurants with your current preferences:</h3>
     <% else %>
+        <section>
         <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
         <h2>__________________________________________________________________________</h2>
-        <% @photos.each do |p| %>
-                <%= image_tag(p, size: "300x300")%>
-        <% end %>
-        <h4><a href=<%= (@restaurant["url"]) %> target="_blank"><%= (@restaurant["name"]) %></a></h4>
-        <h5><%= @restaurant["location"]["address1"] %></h5>
-        <h6><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-        </br>
-        <%= button_to "Like", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
-                :counter => @count += 1, :liked_pos => @count-1, :init => true, :random_ind => params[:random_ind]}, {class: "like-button"} %>
-        <%= button_to "Disike", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
-                :counter => @count, :init => true, :random_ind => params[:random_ind]}, {class: "dislike-button"} %>
-        <h6>___________________________________</h6></br>
+        </section>
+        <div class = "row">
+            <div class = "dislike-column">
+                <%= button_to "Dislike", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
+                        :counter => @count += 1, :init => true, :random_ind => params[:random_ind]}, {class: "dislike-button"} %>
+                <br></br>
+            </div>
+            <section>
+                <div class = "choice-column">
+                    <% @photos.each do |p| %>
+                            <%= image_tag(p, :height => 250, :crop => "pad")%>
+                    <% end %>
+                    <h4><a href=<%= (@restaurant["url"]) %> target="_blank"><%= (@restaurant["name"]) %></a></h4>
+                    <h5><%= @restaurant["location"]["address1"] %></h5>
+                    <h6><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
+                    </br>
+                </div>
+            </section>
+            <div class = "like-column">
+                <%= button_to "Like", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
+                        :counter => @count, :liked_pos => @count-1, :init => true, :random_ind => params[:random_ind]}, {class: "like-button"} %>
+            </div>
+        </div>
+        <section>
+        <h2>__________________________________________________________________________</h2></br>
+        </section>
     <% end %>
 <% else %>
     <% if @final_rests.empty? %>
@@ -32,16 +47,18 @@
         <%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
     <% else %>
         <%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
+        <section>
         <h3>Restaurants you liked with your current preferences:</h3>
         <h2>__________________________________________________________________________</h2>
         <% @final_rests.each do |r| %>
             <% Client.business(r["id"])["photos"].each do |p| %>
-                <%= image_tag(p, size: "300x300")%>
+                <%= image_tag(p,  :height => 250, :crop => "pad")%>
             <% end %>
             <h4><a href=<%= (r["url"]) %> target="_blank"><%= (r["name"]) %></a></h4>
             <h5><%= r["location"]["address1"] %></h5>
             <h6><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
-            <h6>___________________________________</h6></br>
+            <h2>__________________________________________________________________________</h2></br>
         <% end %>
+        </section>
     <% end %>
 <% end %>

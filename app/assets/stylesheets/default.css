@@ -1,4 +1,9 @@
-div.header {
+section {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header {
   background: linear-gradient(90deg, rgba(215,68,0,1) 0%, rgba(205,154,58,1) 50%, rgba(209,218,0,1) 100%);
   text-align: center;
   color: white;
@@ -79,10 +84,49 @@ div.header {
   color: #FFFFFF;
 }
 
+.dislike-column{
+  float: left;
+  width: 15%;
+}
+
+.choice-column{
+  float: left;
+  width: 70%;
+}
+
+.like-column{
+  float: left;
+  width: 15%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .dislike-button{
   background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .like-button{
-  background-color: #4caf50;
+    background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
