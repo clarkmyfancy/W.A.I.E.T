@@ -8,14 +8,18 @@ class ResultsController < ApplicationController
         @price_range = params[:prices]? [params[:prices].join(',')] : ['1,2,3,4']
         results = Client.search(@cat, @price_range)
         restaurants = results["businesses"].uniq {|biz| biz["name"] } unless results == nil
+        
         @size = restaurants.length()
         randomized_ind = params[:random_ind].select{ |i| i.to_i < @size }
         @count = params[:counter].to_i
+        
+        if params[:liked_pos]
+            @@liked_rests.push(restaurants[randomized_ind[@count-1].to_i]).uniq! {|rest| rest}
+        end
+        
         @curr_rest_ind = randomized_ind[@count].to_i
         @restaurant = restaurants[@curr_rest_ind]
-        if params[:liked_pos]
-            @@liked_rests.push(restaurants[params[:liked_pos].to_i]).uniq! {|rest| rest}
-        end
+        
         @final_rests = params[:init]  ?  @@liked_rests : @@liked_rests.clear()
         @end_of_list = @count >= @size ? true : false
     end
