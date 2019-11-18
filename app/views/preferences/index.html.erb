@@ -38,6 +38,21 @@
     <%= check_box_tag "categories[]", 'american', params[:categories] && params[:categories][0].include?('american')%>
     American<span class="checkmark"></span>
   </label>
+  
+  <label class="container">
+    <%= check_box_tag "categories[]", 'seafood', params[:categories] && params[:categories][0].include?('seafood')%>
+    Seafood<span class="checkmark"></span>
+  </label>
+  
+  <label class="container">
+    <%= check_box_tag "categories[]", 'cajun', params[:categories] && params[:categories][0].include?('cajun')%>
+    Cajun<span class="checkmark"></span>
+  </label>
+  
+  <label class="container">
+    <%= check_box_tag "categories[]", 'barbeque', params[:categories] && params[:categories][0].include?('barbeque')%>
+    Barbeque<span class="checkmark"></span>
+  </label>
 
   <label class="container">
     <%= check_box_tag "categories[]", 'vegan', params[:categories] && params[:categories][0].include?('vegan')%>
