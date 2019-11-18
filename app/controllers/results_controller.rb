@@ -14,11 +14,12 @@ class ResultsController < ApplicationController
         @count = params[:counter].to_i
         
         if params[:liked_pos]
-            @@liked_rests.push(restaurants[randomized_ind[@count-1].to_i]).uniq! {|rest| rest}
+            liked_rest_ind = randomized_ind[@count-1].to_i
+            @@liked_rests.push(restaurants[liked_rest_ind]).uniq! {|rest| rest}
         end
         
-        @curr_rest_ind = randomized_ind[@count].to_i
-        @restaurant = restaurants[@curr_rest_ind]
+        curr_rest_ind = randomized_ind[@count].to_i
+        @restaurant = restaurants[curr_rest_ind]
         @photos = Client.business(@restaurant["id"])["photos"]
         
         @final_rests = params[:init]  ?  @@liked_rests : @@liked_rests.clear()

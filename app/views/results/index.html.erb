@@ -7,7 +7,7 @@
 <%= @price_range %>
 <br>
 <% if !@end_of_list %>
-<%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
+<%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %>
     <% if @size == 0 %>
         <h3>There are no open restaurants with your current preferences:</h3>
     <% else %>
@@ -25,7 +25,6 @@
         <%= button_to "Disike", {:controller => "results", :action => "index", :categories => @cat, :prices => @price_range, 
                 :counter => @count, :init => true, :random_ind => params[:random_ind]}, {class: "dislike-button"} %>
         <h6>___________________________________</h6></br>
-        <h6><%= @photos %></h6>
     <% end %>
 <% else %>
     <% if @final_rests.empty? %>
@@ -46,18 +45,3 @@
         <% end %>
     <% end %>
 <% end %>
-    
-
-
-
-<!--may or may not need-->
-<script type="text/javascript">
-//     function buttonClick()
-//     {
-//         var value = document.getElementById('number').value;
-//         value = isNaN(value) ? 0 : value;
-//         value++;
-//         document.getElementById('number').value = value;
-        
-//     }
-</script> 
