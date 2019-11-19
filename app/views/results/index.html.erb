@@ -10,7 +10,6 @@ a, a:visited, a:hover, a:active {
 <br>
 <% if !@end_of_list %>
 <u><%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %></u>
-</div>
     <% if @size == 0 %>
         <h3>There are no open restaurants with your current preferences:</h3>
     <% else %>
@@ -26,13 +25,15 @@ a, a:visited, a:hover, a:active {
             </div>
             <section>
                 <div class = "choice-column">
-                    <% @photos.each do |p| %>
-                            <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
-                    <% end %></br>
+                    <% if @photos != nil %>
+                        <% @photos.each do |p| %>
+                                <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
+                        <% end %></br>
+                    <% end %>
                     <h3><%= (@restaurant["name"]) %></h3>
-                    <h4><%= @restaurant["location"]["address1"] %></h4>
+                    <h4><%= @restaurant["location"]["address1"]%></h4>
                     <h5><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h5>
-                    <h2>Click For More: 
+                    <h2>More Info: 
                         <a href=<%= (@restaurant["url"]) %> target="_blank">
                             <img class="yelp" src="https://vivalajaiba.com/wp-content/uploads/2018/07/yelp-logo.png" alt="Yelp Link">
                         </a>
@@ -68,7 +69,7 @@ a, a:visited, a:hover, a:active {
                 <h3><%= (r["name"]) %></h3>
                 <h4><%= r["location"]["address1"] %></h4>
                 <h5><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h5>
-                <h2>Click For More: 
+                <h2>More Info: 
                     <a href=<%= (r["url"]) %> target="_blank">
                         <img class="yelp" src="https://vivalajaiba.com/wp-content/uploads/2018/07/yelp-logo.png" alt="Yelp Link">
                     </a>
