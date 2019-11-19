@@ -8,8 +8,8 @@ a, a:visited, a:hover, a:active {
     <a href="/"><p class="page_title">WAIET</p></a>
 </div>
 <h2 class="preference_selection" style="text-align:center">Select Preferences</h2></br>
+<%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
 <div class="center-div">
-  <%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
   <div class="divider">
     <label class="container">
       <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
@@ -119,5 +119,5 @@ a, a:visited, a:hover, a:active {
   </div>
 </div>
 
-<%= submit_tag "Submit" , {class: "preferences_button"} %>
+<%= submit_tag "Submit", {class: "preferences_button"} %>
 <% end %>

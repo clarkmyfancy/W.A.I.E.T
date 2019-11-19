@@ -7,7 +7,7 @@ a, a:visited, a:hover, a:active {
 <div class="header">
     <a href="/"><p class="page_title">WAIET</p></a>
 </div>
-<br>
+</br>
 <% if !@end_of_list %>
 <u><%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %></u>
     <% if @size == 0 %>
