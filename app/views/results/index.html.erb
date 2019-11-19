@@ -22,8 +22,7 @@
                     <% @photos.each do |p| %>
                             <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
                     <% end %></br>
-                    <h3><%= (@restaurant["name"]) %>
-                    </h3>
+                    <h3><%= (@restaurant["name"]) %></h3>
                     <h4><%= @restaurant["location"]["address1"] %></h4>
                     <h5><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h5>
                     <h2>Click For More: 
@@ -51,15 +50,28 @@
         <section>
         <h3>Restaurants you liked with your current preferences:</h3>
         <h2>__________________________________________________________________________</h2>
-        <% @final_rests.each do |r| %>
-            <% Client.business(r["id"])["photos"].each do |p| %>
-                <%= image_tag(p,  :height => 250, :crop => "pad")%>
-            <% end %>
-            <h4><a href=<%= (r["url"]) %> target="_blank"><%= (r["name"]) %></a></h4>
-            <h5><%= r["location"]["address1"] %></h5>
-            <h6><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h6>
+        <div class="row">
+            <div class = "dislike-column">
+            </div>
+            <% @final_rests.each do |r| %>
+            <div class="final">
+                <% Client.business(r["id"])["photos"].each do |p| %>
+                    <%= image_tag(p,  :height => 250, :crop => "pad")%>
+                <% end %>
+                <h3><%= (r["name"]) %></h3>
+                <h4><%= r["location"]["address1"] %></h4>
+                <h5><%= (r["rating"])%> rating with <%= r["review_count"]%> reviews.</h5>
+                <h2>Click For More: 
+                    <a href=<%= (r["url"]) %> target="_blank">
+                        <img class="yelp" src="https://vivalajaiba.com/wp-content/uploads/2018/07/yelp-logo.png" alt="Yelp Link">
+                    </a>
+                </h2>
+            </div>
+        </div>
             <h2>__________________________________________________________________________</h2></br>
+            
         <% end %>
+        
         </section>
     <% end %>
 <% end %>

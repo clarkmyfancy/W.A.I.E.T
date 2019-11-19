@@ -72,18 +72,24 @@ div.header {
 
 .dislike-column{
   float: left;
-  width: 10%;
+  width: 8%;
   
 }
 
 .choice-column{
   float: left;
-  width: 80%;
+  width: 84%;
 }
+
+/*.final-choice-column{*/
+/*  float: center;*/
+/*  width: 84%;*/
+/*}*/
+
 
 .like-column{
   float: left;
-  width: 10%;
+  width: 8%;
 }
 
 .row:after {
@@ -96,12 +102,12 @@ div.header {
   background-color: #f44336;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 80% 32px;
+  font-size: 20px;
+  margin: 130% 10px;
   cursor: pointer;
 }
 
@@ -109,12 +115,12 @@ div.header {
   background-color: #4caf50;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 80% 2px;
+  font-size: 20px;
+  margin: 130% 10px;
   cursor: pointer;
 }
 
