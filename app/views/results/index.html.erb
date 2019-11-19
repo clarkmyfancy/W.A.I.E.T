@@ -1,9 +1,16 @@
+<style>
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
 <div class="header">
-    <p class="page_title">WAIET</p>
+    <a href="/"><p class="page_title">WAIET</p></a>
 </div>
 <br>
 <% if !@end_of_list %>
-<%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %>
+<u><%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %></u>
+</div>
     <% if @size == 0 %>
         <h3>There are no open restaurants with your current preferences:</h3>
     <% else %>
@@ -44,9 +51,9 @@
 <% else %>
     <% if @final_rests.empty? %>
         <h3>There are no restaurants that you liked with your current preferences</h3>
-        <%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
+        <u><%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %></u>
     <% else %>
-        <%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %>
+        <u><%= link_to "Edit Preferences", preferences_path(categories: params[:categories], prices: params[:prices]) %></u>
         <section>
         <h3>Restaurants you liked with your current preferences:</h3>
         <h2>__________________________________________________________________________</h2>
