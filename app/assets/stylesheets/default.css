@@ -3,7 +3,7 @@ section {
   margin: 0 auto;
 }
 
-.header {
+div.header {
   background: linear-gradient(90deg, rgba(215,68,0,1) 0%, rgba(205,154,58,1) 50%, rgba(209,218,0,1) 100%);
   text-align: center;
   color: white;
@@ -26,7 +26,7 @@ section {
   font-family: Georgia;
   background-color: white;
   color: black;
-  background: linear-gradient(90deg, rgba(195,62,0,1) 0%, rgba(255,198,171,1) 100%);
+  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
   font-size: 24px !important;
   padding: 10px 60px 10px 60px !important;
   border-radius: 5px;
@@ -36,31 +36,17 @@ section {
   margin: auto;
 }
 
-.button0 {
-  width: 1440px;
-  height: 116px;
-  left: 0px;
-  top: 0px;
+.preference_selection {
+  margin-bottom: 0px;
+  margin-left: 35px;
+  font-size: 20px;
+}
 
-  background: linear-gradient(90deg, #D85E48 0%, #EF956D 54.39%, #D8CA48 100%);
-  border: 1px solid #C1C1C1;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
-
-  font-family: Flavors;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 96px;
-  line-height: 123px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  color: #FFFFFF;
-
-  mix-blend-mode: normal;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.price_selection {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  margin-left: 35px;
+  font-size: 20px;
 }
 
 .button {
@@ -92,17 +78,18 @@ section {
 
 .dislike-column{
   float: left;
-  width: 15%;
+  width: 10%;
+  
 }
 
 .choice-column{
   float: left;
-  width: 70%;
+  width: 80%;
 }
 
 .like-column{
   float: left;
-  width: 15%;
+  width: 10%;
 }
 
 .row:after {
@@ -120,8 +107,8 @@ section {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 24px;
+  margin: 80% 32px;
   cursor: pointer;
 }
 
@@ -134,7 +121,19 @@ section {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 24px;
+  margin: 80% 2px;
   cursor: pointer;
 }
+
+.yelp{
+  width: 70px;
+  height: 70px;
+  margin:-20px 0px ;
+}
+
+.yelp:hover{
+  color: white;
+  background: white;
+}
+

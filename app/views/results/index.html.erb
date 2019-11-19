@@ -1,11 +1,6 @@
 <div class="header">
     <p class="page_title">WAIET</p>
 </div>
-<div class = "font-setting">
-<%= "Preferences: "%>
-<%= @cat %>,
-<%= "Price Range: "%>
-<%= @price_range %>
 <br>
 <% if !@end_of_list %>
 <%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %>
@@ -25,12 +20,17 @@
             <section>
                 <div class = "choice-column">
                     <% @photos.each do |p| %>
-                            <%= image_tag(p, :height => 250, :crop => "pad")%>
-                    <% end %>
-                    <h4><a href=<%= (@restaurant["url"]) %> target="_blank"><%= (@restaurant["name"]) %></a></h4>
-                    <h5><%= @restaurant["location"]["address1"] %></h5>
-                    <h6><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h6>
-                    </br>
+                            <%= image_tag(p, :height => 250, :crop => "pad", :class => "pics") %>
+                    <% end %></br>
+                    <h3><%= (@restaurant["name"]) %>
+                    </h3>
+                    <h4><%= @restaurant["location"]["address1"] %></h4>
+                    <h5><%= (@restaurant["rating"])%> rating with <%= @restaurant["review_count"]%> reviews.</h5>
+                    <h2>Click For More: 
+                        <a href=<%= (@restaurant["url"]) %> target="_blank">
+                            <img class="yelp" src="https://vivalajaiba.com/wp-content/uploads/2018/07/yelp-logo.png" alt="Yelp Link">
+                        </a>
+                    </h2>
                 </div>
             </section>
             <div class = "like-column">
