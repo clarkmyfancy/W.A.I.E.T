@@ -20,7 +20,7 @@ class ResultsController < ApplicationController
         
         curr_rest_ind = randomized_ind[@count].to_i
         @restaurant = restaurants[curr_rest_ind]
-        @photos = Client.business(@restaurant["id"])["photos"]
+        @photos =  Client.business(@restaurant["id"])["photos"] unless @restaurant == nil
         
         @final_rests = params[:init]  ?  @@liked_rests : @@liked_rests.clear()
         @end_of_list = @count >= @size ? true : false
