@@ -8,10 +8,10 @@ a, a:visited, a:hover, a:active {
     <a href="/"><p class="page_title">WAIET</p></a>
 </div>
 </br>
-<% if !@end_of_list %>
+<% if !@end_of_list || @size == 0 %>
 <u><%= link_to "Edit Preferences", preferences_path(categories: @cat, prices: @price_range) %></u>
     <% if @size == 0 %>
-        <h3>There are no open restaurants with your current preferences:</h3>
+        <h3>There are no open restaurants with your current preferences.</h3>
     <% else %>
         <section>
         <h3>Restaurant <%= @count + 1 %> out of <%= @size %> that is open and matches those filters:</h3>
