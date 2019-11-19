@@ -1,9 +1,9 @@
 <div class="header">
     <p class="page_title">WAIET</p>
 </div>
+<h2 class="preference_selection" style="text-align:center">Select Preferences</h2></br>
 <div class="center-div">
 <%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
-  <h2 class="preference_selection">Select Preferences</h2>
 <div class="divider">
   <label class="container">
     <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
@@ -70,10 +70,10 @@
     <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
     Gluten Free<span class="checkmark"></span>
   </label>
-</div>
+</div></br></br>
 
   
-  <h2 class="price_selection">Select Prices</h2>
+<h2 class="price_selection">Select Prices</h2></br>
 <div class="divider">
   <label class="container">
     <%= check_box_tag "prices[]", '1', params[:prices] && params[:prices].include?('1')%>
@@ -82,12 +82,12 @@
 
   <label class="container">
     <%= check_box_tag "prices[]", '2', params[:prices] && params[:prices].include?('2')%>
-    $$ ($11-30)<span class="checkmark"></span>
+    $$ ($11-$30)<span class="checkmark"></span>
   </label>
 
   <label class="container">
     <%= check_box_tag "prices[]", '3', params[:prices] && params[:prices].include?('3')%>
-    $$$ ($31-60)<span class="checkmark"></span>
+    $$$ ($31-$60)<span class="checkmark"></span>
   </label>
 
   <label class="container">
