@@ -1,117 +1,123 @@
+<style>
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
 <div class="header">
-    <p class="page_title">WAIET</p>
+    <a href="/"><p class="page_title">WAIET</p></a>
 </div>
 <h2 class="preference_selection" style="text-align:center">Select Preferences</h2></br>
-<div class="center-div">
 <%= form_tag results_path(counter: 0, init: params[:init], random_ind: [*0...10].shuffle) do %> 
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
-    Breakfast<span class="checkmark"></span>
-  </label>
+<div class="center-div">
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "categories[]", 'breakfast', params[:categories] && params[:categories][0].include?('breakfast')%>
+      Breakfast<span class="checkmark"></span>
+    </label>
+    
+    <label class="container">
+      <%= check_box_tag "categories[]", 'lunch', params[:categories] && params[:categories][0].include?('lunch')%>
+      Lunch<span class="checkmark"></span>
+    </label>
   
-  <label class="container">
-    <%= check_box_tag "categories[]", 'lunch', params[:categories] && params[:categories][0].include?('lunch')%>
-    Lunch<span class="checkmark"></span>
-  </label>
+    <label class="container">
+      <%= check_box_tag "categories[]", 'dinner', params[:categories] && params[:categories][0].include?('dinner')%>
+      Dinner<span class="checkmark"></span>
+    </label>
+  </div>
 
-  <label class="container">
-    <%= check_box_tag "categories[]", 'dinner', params[:categories] && params[:categories][0].include?('dinner')%>
-    Dinner<span class="checkmark"></span>
-  </label>
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "categories[]", 'mexican', params[:categories] && params[:categories][0].include?('mexican')%>
+      Mexican<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "categories[]", 'italian', params[:categories] && params[:categories][0].include?('italian')%>
+      Italian<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "categories[]", 'asian', params[:categories] && params[:categories][0].include?('asian')%>
+      Asian<span class="checkmark"></span>
+    </label>
+  </div>  
+
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "categories[]", 'american', params[:categories] && params[:categories][0].include?('american')%>
+      American<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "categories[]", 'barbeque', params[:categories] && params[:categories][0].include?('barbeque')%>
+      Barbeque<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "categories[]", 'cajun', params[:categories] && params[:categories][0].include?('cajun')%>
+      Cajun<span class="checkmark"></span>
+    </label>
+  </div>  
+
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "categories[]", 'seafood', params[:categories] && params[:categories][0].include?('seafood')%>
+      Seafood<span class="checkmark"></span>
+    </label>
+    
+    <label class="container">
+      <%= check_box_tag "categories[]", 'sweets', params[:categories] && params[:categories][0].include?('sweets')%>
+      Sweets<span class="checkmark"></span>
+    </label>
+    
+    <label class="container">
+      <%= check_box_tag "categories[]", 'fast food', params[:categories] && params[:categories][0].include?('fast food')%>
+      Fast Food<span class="checkmark"></span>
+    </label>
+  </div>
+
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "categories[]", 'vegetarian', params[:categories] && params[:categories][0].include?('vegetarian')%>
+      Vegetarian<span class="checkmark"></span>
+    </label>
+    
+    <label class="container">
+      <%= check_box_tag "categories[]", 'vegan', params[:categories] && params[:categories][0].include?('vegan')%>
+      Vegan<span class="checkmark"></span>
+    </label>
+    
+    <label class="container">
+      <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
+      Gluten Free<span class="checkmark"></span>
+    </label>
+  </div></br></br>
+  
+  <h2 class="price_selection" style="text-align:center">Select Prices</h2></br>
+  <div class="divider">
+    <label class="container">
+      <%= check_box_tag "prices[]", '1', params[:prices] && params[:prices].include?('1')%>
+      $ (under $10)<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "prices[]", '2', params[:prices] && params[:prices].include?('2')%>
+      $$ ($11-$30)<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "prices[]", '3', params[:prices] && params[:prices].include?('3')%>
+      $$$ ($31-$60)<span class="checkmark"></span>
+    </label>
+  
+    <label class="container">
+      <%= check_box_tag "prices[]", '4', params[:prices] && params[:prices].include?('4')%>
+      $$$$ ($61+)<span class="checkmark"></span>
+    </label></br>
+  </div>
 </div>
 
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "categories[]", 'mexican', params[:categories] && params[:categories][0].include?('mexican')%>
-    Mexican<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "categories[]", 'italian', params[:categories] && params[:categories][0].include?('italian')%>
-    Italian<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "categories[]", 'asian', params[:categories] && params[:categories][0].include?('asian')%>
-    Asian<span class="checkmark"></span>
-  </label>
-</div>  
-
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "categories[]", 'american', params[:categories] && params[:categories][0].include?('american')%>
-    American<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "categories[]", 'barbeque', params[:categories] && params[:categories][0].include?('barbeque')%>
-    Barbeque<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "categories[]", 'cajun', params[:categories] && params[:categories][0].include?('cajun')%>
-    Cajun<span class="checkmark"></span>
-  </label>
-</div>  
-
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "categories[]", 'seafood', params[:categories] && params[:categories][0].include?('seafood')%>
-    Seafood<span class="checkmark"></span>
-  </label>
-  
-  <label class="container">
-    <%= check_box_tag "categories[]", 'sweets', params[:categories] && params[:categories][0].include?('sweets')%>
-    Sweets<span class="checkmark"></span>
-  </label>
-  
-  <label class="container">
-    <%= check_box_tag "categories[]", 'fast food', params[:categories] && params[:categories][0].include?('fast food')%>
-    Fast Food<span class="checkmark"></span>
-  </label>
-</div>
-
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "categories[]", 'vegetarian', params[:categories] && params[:categories][0].include?('vegetarian')%>
-    Vegetarian<span class="checkmark"></span>
-  </label>
-  
-  <label class="container">
-    <%= check_box_tag "categories[]", 'vegan', params[:categories] && params[:categories][0].include?('vegan')%>
-    Vegan<span class="checkmark"></span>
-  </label>
-  
-  <label class="container">
-    <%= check_box_tag "categories[]", 'gluten free', params[:categories] && params[:categories][0].include?('gluten free')%>
-    Gluten Free<span class="checkmark"></span>
-  </label>
-</div></br></br>
-
-  
-<h2 class="price_selection">Select Prices</h2></br>
-<div class="divider">
-  <label class="container">
-    <%= check_box_tag "prices[]", '1', params[:prices] && params[:prices].include?('1')%>
-    $ (under $10)<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "prices[]", '2', params[:prices] && params[:prices].include?('2')%>
-    $$ ($11-$30)<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "prices[]", '3', params[:prices] && params[:prices].include?('3')%>
-    $$$ ($31-$60)<span class="checkmark"></span>
-  </label>
-
-  <label class="container">
-    <%= check_box_tag "prices[]", '4', params[:prices] && params[:prices].include?('4')%>
-    $$$$ ($61+)<span class="checkmark"></span>
-  </label></br>
-</div>
-
-<%= submit_tag "Submit" , {class: "preferences_button"} %>
+<%= submit_tag "Submit", {class: "preferences_button"} %>
 <% end %>
