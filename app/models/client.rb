@@ -83,50 +83,50 @@ class Client < ApplicationRecord
     response.parse
   end
   
-  options = {}
-  OptionParser.new do |opts|
-    opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
+  # options = {}
+  # OptionParser.new do |opts|
+  #   opts.banner = "Example usage: ruby sample.rb (search|lookup) [options]"
   
-    opts.on("-tTERM", "--term=TERM", "Search term (for search)") do |term|
-      options[:term] = term
-    end
+  #   opts.on("-tTERM", "--term=TERM", "Search term (for search)") do |term|
+  #     options[:term] = term
+  #   end
     
-    opts.on("-pPRICE", "--price=PRICE", "Search price (for search)") do |price|
-      options[:price] = price
-    end
+  #   opts.on("-pPRICE", "--price=PRICE", "Search price (for search)") do |price|
+  #     options[:price] = price
+  #   end
     
-    opts.on("-oOPEN", "--open_now=OPEN", "Search open restaurants (for search)") do |open_now|
-      options[:open_now] = open_now
-    end
+  #   opts.on("-oOPEN", "--open_now=OPEN", "Search open restaurants (for search)") do |open_now|
+  #     options[:open_now] = open_now
+  #   end
   
-    opts.on("-bBUSINESS_ID", "--business-id=BUSINESS_ID", "Business id (for lookup)") do |id|
-      options[:business_id] = id
-    end
+  #   opts.on("-bBUSINESS_ID", "--business-id=BUSINESS_ID", "Business id (for lookup)") do |id|
+  #     options[:business_id] = id
+  #   end
   
-    opts.on("-h", "--help", "Prints this help") do
-      puts opts
-      exit
-    end
-  end.parse!
-  
-  
-  command = ARGV
+  #   opts.on("-h", "--help", "Prints this help") do
+  #     puts opts
+  #     exit
+  #   end
+  # end.parse!
   
   
-  case command.first
-  when "search"
-    term = options.fetch(:term, DEFAULT_TERM)
-    price = options.fetch(:price, DEFAULT_PRICE)
-    open_now = options.fetch(:open_now, DEFAULT_OPEN)
+  # command = ARGV
   
-    raise "business_id is not a valid parameter for searching" if options.key?(:business_id)
   
-    response = search(term, price, open_now)
+  # case command.first
+  # when "search"
+  #   term = options.fetch(:term, DEFAULT_TERM)
+  #   price = options.fetch(:price, DEFAULT_PRICE)
+  #   open_now = options.fetch(:open_now, DEFAULT_OPEN)
   
-    #puts "Found #{response["total"]} businesses. Listing #{SEARCH_LIMIT}:"
-    businesses = response["businesses"].uniq {|biz| biz["name"] }
-    businesses.each { |b| puts b["name"] }
-  else
-    puts "Please specify a command: search or lookup"
-  end
+  #   raise "business_id is not a valid parameter for searching" if options.key?(:business_id)
+  
+  #   response = search(term, price, open_now)
+  
+  #   #puts "Found #{response["total"]} businesses. Listing #{SEARCH_LIMIT}:"
+  #   businesses = response["businesses"].uniq {|biz| biz["name"] }
+  #   businesses.each { |b| puts b["name"] }
+  # else
+  #   puts "Please specify a command: search or lookup"
+  # end
 end
